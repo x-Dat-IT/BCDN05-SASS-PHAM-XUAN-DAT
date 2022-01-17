@@ -1,0 +1,98 @@
+footer{
+    padding: 50px 0 200px;
+    // position: relative;
+    // .footer__img-bottom{
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     z-index: -1;
+    // }
+    background: url('../img/footer_background.jpg') no-repeat center ;
+    background-size: cover;
+    h4{
+        padding: 10px 0;
+        color: $color-white;
+        font-weight: $fw-6;
+    }
+    li,a{
+        color: $color-white;
+        font-size: $fs-1 + 1;
+        line-height:2.5;
+    }
+    a:hover{
+        color: $color-white;
+        opacity: .8;
+        
+    }
+    .footer__list{
+        li{ 
+            transition: $ts;
+            border-bottom: 1px solid rgba(0,0,0,.1);
+            padding: 5px 0;
+        }
+    }
+    .footer__icon{
+        a{
+            padding-right: 10px;
+            &:hover{
+                color: $color-primary;
+            }
+        }
+    }
+    .footer__form{
+        padding: 20px 0;
+        input{
+            padding: 14px 0;
+            width: 100%;
+            color: $color-white;
+            background: $color-violet;
+            border-radius: 30px;
+            font-size: $fs-1;
+            border: 1px solid rgba(255,255,255,.1);
+            outline: none;
+            &::placeholder{
+            color: $color-white;
+            text-align: center;
+            }
+            &:focus{
+                border: 1px solid rgba(255,255,255,1);
+                
+            }
+        }
+        button{
+            @include styleText($color-primary,$fs-1 - 1, $fw-6);
+            @include styleButton(14px,90px,2px solid $color-white,0 0 0 3em $color-white inset,30px);
+            transition: $ts;
+            margin: 0;
+            background:transparent;
+            width: 100%;
+            &:hover, &:focus{
+                box-shadow: 0 0 0 1px $color-violet inset;
+                color: $color-white;
+                text-decoration: none;
+                background: $color-violet;
+                border-color:  $color-white;
+            }
+        }
+
+    }
+}
+
+// Responsive
+@include responsive("lg") {
+    footer{
+        padding: 0 0 100px;
+        h4{
+            padding: 0 0 10px;
+        }
+        .footer__form{
+            input,button{
+                width: 100%;
+            }
+        }
+        .footer__col{
+            margin: 0 0 50px;
+        }
+    }
+}

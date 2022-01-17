@@ -1,0 +1,31 @@
+.carousel{
+    padding-top: 100px;
+    position: relative;
+    .carousel__left{
+        
+        h3{
+            @include styleText($color-violet,$fs-1 + 3, $fw-6)
+        }
+        h1{
+            @include styleText($color-primary,$fs-5 + 7, $fw-6)
+        }
+    }
+    .carousel__img-bottom{
+        width: 100%;
+        position: absolute;
+        bottom:0;
+        left: 0;
+        z-index: -1;
+    }
+}
+
+// responsive
+@include responsive("xl"){
+    .carousel{
+        .carousel__left{
+            h1{
+                font-size: 47px;
+            }
+        }
+    }
+}

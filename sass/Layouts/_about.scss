@@ -1,0 +1,47 @@
+.about{
+    background: $color-bg-1;
+    position: relative;
+    z-index: 10;
+    .about__main{
+        position: relative;
+        z-index: 2;
+    }
+
+    .about__img-bottom{
+        width: 100%;
+        position: absolute;
+        bottom:0;
+        left: 0;
+    }
+    .card{
+        margin: 25px 0;
+        border-radius: 10px;   
+        transition: $ts;  
+        overflow: hidden;
+        &:hover{
+            box-shadow: $box-sd-1;
+        }
+    }
+    .about__img-card{
+        overflow: hidden;
+    }
+    .card-img-top{
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        transition: $ts;
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+    h5{
+        @include styleText($color-violet, $fs-1 - 1 , $fw-6);
+    }
+    h2{
+        @include styleText($color-primary, $fs-2, $fw-6);
+
+    }
+    p{
+        @include styleText($color-primary, $fs-1 + 1, $fw-4);
+        line-height: 1.8;
+    }
+}

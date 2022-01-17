@@ -1,0 +1,21 @@
+@mixin styleText($color, $fs, $fw){
+    color: $color;
+    font-size: $fs;
+    font-weight: $fw;
+}
+@mixin styleButton($pd-y, $pd-x, $boder,$box-sd,$b-radius){
+    padding: $pd-y $pd-x;
+    border: $boder;
+    box-shadow: $box-sd;
+    border-radius: $b-radius;
+}
+@mixin responsive($screen){
+    @if(map-has-key($map: $breakpoints, $key: $screen)){
+        $value: map-get($map: $breakpoints, $key: $screen);
+        @media screen and (max-width:$value){
+            @content;
+        }
+    }@else{
+        @error 'Màn hình không tồn tại';
+    }
+}

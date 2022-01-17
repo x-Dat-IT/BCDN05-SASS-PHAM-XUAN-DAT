@@ -1,0 +1,97 @@
+.contact {
+    padding: 100px 0;
+    position: relative;
+    .contact__img-top{
+        width: 80%;
+        height:auto;
+    }
+    form {
+        background: $color-white;
+        box-shadow: $box-sd-1;
+        padding: 10px 20px;
+        border-radius:10px;
+        .form-row {
+            position: relative;
+        }
+        .form-control:focus{
+            box-shadow: $box-sd-2;
+            border-color: rgba(0,0,0,0.1);
+        }
+    
+        h2 {
+            text-align: center;
+            padding-bottom: 50px;
+            @include styleText($color-primary, $fs-3, $fw-6);
+        }
+        i {
+            position: absolute;
+            top: 30%;
+            left: 20px;
+            color: $color-violet;
+        }
+        input,
+        #inputState {
+            padding: 5px 40px;
+            border-radius: 20px;
+            font-size: $fs-1;
+            height:45px;
+        }
+        textarea {
+            padding: 10px 40px;
+            border-radius: 20px;
+            font-size: $fs-1;
+        }
+        .form-select {
+            position: relative;
+            .contact__icon-cap {
+                position: absolute;
+                top: 30%;
+                left: 14px;
+                color: $color-violet;
+            }
+        }
+        .form-area{
+            position: relative;
+            .contact__icon-sms {
+                position: absolute;
+                top: 13px;
+                left: 14px;
+                color: $color-violet;
+            }
+        }
+        button{
+           @include styleText($color-white,$fs-1 - 1, $fw-6);
+            @include styleButton(13px,50px,2px solid $color-violet,0 0 0 3em $color-violet inset,30px);
+            transition: $ts;
+            margin:20px 0 50px;
+            background:transparent;
+            &:hover, &:focus{
+                box-shadow: 0 0 0 1px $color-white inset;
+                color: $color-violet;
+                text-decoration: none;
+                background: $color-white;
+                border-color:  $color-violet;
+            }
+            
+          
+        }
+    }
+    .contact__img-bottom{
+        position:absolute;
+        bottom: -1px;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+    }
+}
+
+// responsive
+@include responsive("lg"){
+    .contact{
+        form{
+            h2{
+                text-align:left;
+            }
+        }
+    }
+}
